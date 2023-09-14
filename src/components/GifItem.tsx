@@ -1,4 +1,3 @@
-
 interface CardPropsImageI {
     title: string;
     url: string;

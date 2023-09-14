@@ -1,10 +1,10 @@
 import {render, screen} from '@testing-library/react';
 import {GifItem} from '../../src/components/GifItem';
-import React from 'react';
+
 
 describe('Testing <GifItem/>', () => {
     const title = 'Kakaroto';
-    const url = ''
+    const url = 'https://example.com/image.jpg'
     
     test('should match with the snapshot', () => {
         const {container} = render(<GifItem title={title} url={url}/>);
@@ -13,7 +13,7 @@ describe('Testing <GifItem/>', () => {
 
     test('should show the image with the correct url and ALT', () => {
         render(<GifItem title={title} url={url}/>);
-        // screen.debug();
+        screen.debug();
         const {src, alt} = screen.getByRole('img') as HTMLImageElement;
 
         expect (src).toBe(url);  
