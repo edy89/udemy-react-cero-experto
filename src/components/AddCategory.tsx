@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 interface AddCategoryProps {
     onNewCategory: (value: string) => void;
-  }
+}
 // interface AddCategoryProps {
 //     setCategories: React.Dispatch<React.SetStateAction<string[]>>; // Tipo de setCategories
 //   }
@@ -13,6 +13,7 @@ export const AddCategory: React.FC<AddCategoryProps> = ({onNewCategory}) => {
     const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // const onInputChange = ({target}) => {
         setInputValue(event.target.value);
+        // setInputValue(target.value);
     };
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // avoiding refresh page that is default configuration with form.
@@ -27,7 +28,7 @@ export const AddCategory: React.FC<AddCategoryProps> = ({onNewCategory}) => {
     };
 
   return (
-    <form onSubmit={(event) => {onSubmit(event)}}>
+    <form onSubmit={(event) => {onSubmit(event)}} aria-label='form'>
         <input 
             type="text" 
             placeholder="Search gifs"
